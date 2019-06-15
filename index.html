@@ -78,9 +78,9 @@
                         <th class="bg-secondary"></th>
                         <th class="bg-secondary"></th>
                         <th class="bg-secondary"></th>
-                        <th><div class="l1-ok result">33</div></th>
-                        <th><div class="l2-ok result">66</div></th>
-                        <th><div class="l3-ok result">100</div></th>
+                        <th><div class="l1-ok result">33%</div></th>
+                        <th><div class="l2-ok result">66%</div></th>
+                        <th><div class="l3-ok result">100%</div></th>
                         <th class="bg-secondary"></th>
                     </tr>
                   </tfoot>
@@ -187,13 +187,19 @@
         }
 
         function resultCalculation() {
-          $( ".result" ).hide();
+          //$( ".result" ).hide();
+          $( ".l1-ok" ).removeClass( ".text-success" );
+          $( ".l2-ok" ).removeClass( ".text-success" );
+          $( ".l3-ok" ).removeClass( ".text-success" );
           if( lCalculation( "1" ) ) {
-            $( ".l1-ok" ).show();
+            //$( ".l1-ok" ).show();
+            $( ".l1-ok" ).addClass( ".text-success" );
             if( lCalculation( "2" ) ) {
-              $( ".l2-ok" ).show();
+              //$( ".l2-ok" ).show();
+              $( ".l2-ok" ).addClass( ".text-success" );
               if( lCalculation( "3" ) ) {
-                $( ".l3-ok" ).show();
+                //$( ".l3-ok" ).show();
+                $( ".l3-ok" ).addClass( ".text-success" );
               }
             } 
           } 
