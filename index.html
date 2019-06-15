@@ -156,16 +156,16 @@
         
         function loadAction(id,level) {
           let btnId = level+'-'+id;
-          return  '<a href="#" class="btn btn-secondary btn-circle inactive up" id='+btnId+' >'
+          return  '<a role="button" href="#" class="btn btn-secondary btn-circle inactive up" id='+btnId+' >'
                 + '   <i class="fas fa-thumbs-up"></i>'
                 + '</a>'
-                + '<a href="#" class="btn btn-success btn-circle active up" id='+btnId+' >'
+                + '<a role="button" href="#" class="btn btn-success btn-circle active up" id='+btnId+' >'
                 + '   <i class="fas fa-thumbs-up"></i>'
                 + '</a>'
-                + '<a href="#" class="btn btn-secondary btn-circle inactive down" id='+btnId+' >'
+                + '<a role="button" href="#" class="btn btn-secondary btn-circle inactive down" id='+btnId+' >'
                 + '   <i class="fas fa-thumbs-down"></i>'
                 + '</a>'
-                + '<a href="#" class="btn btn-danger btn-circle active down" id='+btnId+' >'
+                + '<a role="button" href="#" class="btn btn-danger btn-circle active down" id='+btnId+' >'
                 + '   <i class="fas fa-thumbs-down"></i>'
                 + '</a>';
         }
