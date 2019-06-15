@@ -1,0 +1,42 @@
+<html>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+        console.log("Test - Init");
+
+        $(document).ready(function() {
+
+            $.getJSON('swagger.json', function(swagger) {
+
+                $.each(swagger.paths, function(keyPath,path) {
+
+                    $( "body" ).append("<p>"+keyPath+"</p>");
+                    
+                    $.each(path, function(keyMethod,method) {
+
+                        $( "body" ).append("<p>========================> "+keyMethod+"</p>");
+                        
+                        $.each(method.responses, function(keyStatus,status) {
+
+                            $( "body" ).append("<p>=================================> "+keyStatus+"</p>");
+
+                        });
+
+                    });
+                });
+
+            });
+
+        });
+
+        console.log("Test - End");
+
+    </script>
+    
+    <body>
+        <h1>RMM Validator</h1>
+    </body>
+
+</html>
