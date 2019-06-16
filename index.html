@@ -84,16 +84,7 @@
                         <th class="bg-secondary"></th>
                     </tr>
                   </tfoot>
-                  <tbody>
-                      <tr>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                        </tr>                    
+                  <tbody>                    
                   </tbody>
                 </table>
               </div>
@@ -151,6 +142,8 @@
         let analyze = new Map();
 
         let count = 0;
+      
+        let dataTable $("#dataTable").DataTable();
 
         //$( ".result" ).hide();
         
@@ -239,19 +232,21 @@
                     analyze.set("l1-"+count,null);
                     analyze.set("l2-"+count,null);
                     analyze.set("l3-"+count,null);
-                    let row = '	<tr>'
-                            + '		<td>' + count + '</td>'
-                            + '		<td>' + keyPath + '</td>' 
-                            + '		<td>' + keyMethod.toUpperCase() + '</td>' 
-                            + '		<td>' + loadAction(count,"l1") + '</td>'
-                            + '		<td>' + loadAction(count,"l2") + '</td>' 
-                            + '		<td>' + loadAction(count,"l3") + '</td>'
-                            + '		<td></td>'                              
-                            + '	</tr>';
-                    $( "tbody" ).append(row);
+                    //let row = '	<tr>'
+                    //        + '		<td>' + count + '</td>'
+                    //        + '		<td>' + keyPath + '</td>' 
+                    //        + '		<td>' + keyMethod.toUpperCase() + '</td>' 
+                    //        + '		<td>' + loadAction(count,"l1") + '</td>'
+                    //        + '		<td>' + loadAction(count,"l2") + '</td>' 
+                    //        + '		<td>' + loadAction(count,"l3") + '</td>'
+                    //        + '		<td></td>'                              
+                    //        + '	</tr>';
+                    //$( "tbody" ).append(row);
+                    dataTable.row.add([count,keyPath,keyMethod.toUpperCase(),loadAction(count,"l1"),loadAction(count,"l3"),loadAction(count,"l3"),""]); 
                 });
             });
             $( ".active" ).hide();
+            dataTable.draw(false);
             $( "table" ).on( "click", ".up", feedBack );
             $( "table" ).on( "click", ".down", feedBack );
           });
